@@ -1,2 +1,2 @@
 # after-the-rain
-App desenvolvido durante a semana Omnistack de 2020 :)
+App desenvolvido durante a semana OmniStack de 11.0 :)
