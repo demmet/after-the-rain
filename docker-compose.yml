@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    command: bash -c "while [ true ]; do sleep 10; done"
+    container_name: atr_web
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://atr_admin@postgres/atr_db
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: atr_admin
+      POSTGRES_DB: atr_db
+      POSTGRES_PASSWORD: atr25@%
